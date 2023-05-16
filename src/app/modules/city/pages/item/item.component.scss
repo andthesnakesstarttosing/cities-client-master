@@ -1,0 +1,26 @@
+.form {
+  display: flex;
+  flex-direction: column;
+}
+.page {
+  .page-title {
+    font-size: 2rem;
+    margin: 2rem 0rem;
+  }
+
+  .page-image {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+    border-radius: 2px;
+  }
+
+  .page-edit-button {
+    margin-top: 1rem;
+    button {
+      box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
+
+.error-message {
+  color: rgba(255, 71, 87, 1);
+}

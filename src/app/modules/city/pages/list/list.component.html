@@ -1,0 +1,20 @@
+<app-search-bar
+  (searchValue)="onSearch($event)"
+  [value]="searchQuery"
+></app-search-bar>
+
+<mat-grid-list [cols]="cols" gutterSize="1rem" rowHeight="310px">
+  <mat-grid-tile *ngFor="let city of (this.cities$ | async)?.content">
+    <app-city-card [city]="city"></app-city-card>
+  </mat-grid-tile>
+</mat-grid-list>
+<div class="pagination-panel" *ngIf="this.cities$ | async as res">
+  <mat-paginator
+    firstPageLabel="First"
+    [pageSize]="res.size"
+    [length]="res.totalElements"
+    (page)="handlePageEvent($event)"
+    [pageIndex]="res.pageable.pageNumber"
+  >
+  </mat-paginator>
+</div>

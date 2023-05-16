@@ -1,0 +1,28 @@
+<app-global-error></app-global-error>
+<mat-toolbar color="primary" class="header">
+  <span class="logo">
+    <a routerLink="/">Cities</a>
+  </span>
+  <span class="spacer"></span>
+  <div *ngIf="!auth.isAuthorized; else elseBlock">
+    <button (click)="service.open()" mat-button>
+      Login
+      <mat-icon fontIcon="logout"></mat-icon>
+    </button>
+  </div>
+  <ng-template #elseBlock>
+    <div>
+      <button (click)="auth.logout()" mat-button>
+        Logout
+        <mat-icon fontIcon="logout"></mat-icon>
+      </button>
+    </div>
+  </ng-template>
+</mat-toolbar>
+<main class="main__wrapper">
+  <router-outlet></router-outlet>
+</main>
+
+<app-modal>
+  <app-login></app-login>
+</app-modal>

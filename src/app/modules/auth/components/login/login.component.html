@@ -1,0 +1,15 @@
+<h2>Login</h2>
+<form [formGroup]="form" class="login-form" (submit)="submit()">
+  <mat-form-field>
+    <mat-label>Username</mat-label>
+    <input matInput placeholder="johndoe" formControlName="username" />
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input matInput placeholder="randompassword" formControlName="password" />
+  </mat-form-field>
+  <button mat-stroked-button type="submit">Login</button>
+  <p class="error-field" *ngIf="form.invalid && form.touched">
+    You should fill all fields!
+  </p>
+</form>

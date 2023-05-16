@@ -1,0 +1,10 @@
+<div class="modal__outer" *ngIf="modalService.isOpened">
+  <mat-card>
+    <button class="modal__btn-close" (click)="modalService.close()">
+      &times;
+    </button>
+    <mat-card-content>
+      <ng-content></ng-content>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,43 @@
+mat-card {
+  border-radius: 12px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+mat-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.avatar {
+  margin-bottom: 0;
+  text-align: center;
+}
+
+mat-card-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+mat-card-content {
+  padding: 0;
+  img {
+    object-fit: cover;
+    width: 280px; /* Here you can use wherever you want to specify the width and also the height of the <img>*/
+    height: 160px;
+  }
+}
+mat-card-image {
+  height: 200px;
+  object-fit: cover;
+  object-position: center;
+}
+mat-card-actions {
+  padding-top: 1rem;
+  height: 0px;
+  a {
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    margin-left: 0.5rem;
+  }
+}

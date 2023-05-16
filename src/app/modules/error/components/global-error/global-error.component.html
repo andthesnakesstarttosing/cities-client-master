@@ -1,0 +1,4 @@
+<div class="wrapper" *ngIf="service.isErrorPresent">
+  <span> An error occured: {{ service.message }} </span>
+  <button class="btn-close" (click)="service.clear()">&times;</button>
+</div>

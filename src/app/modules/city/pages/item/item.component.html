@@ -1,0 +1,47 @@
+<div class="page" *ngIf="city$ | async as res">
+  <h2 class="page-title">
+    {{ res.title }}
+  </h2>
+  <img class="page-image" [src]="res.photoUrl" />
+  <p class="page-edit-button">
+    <button mat-stroked-button (click)="modalService.open()">Edit</button>
+  </p>
+  <app-modal>
+    <form class="form" (ngSubmit)="submit()" *ngIf="!!form" [formGroup]="form">
+      <mat-form-field class="full-width">
+        <mat-label>Title</mat-label>
+        <input
+          matInput
+          placeholder="New name"
+          formControlName="title"
+          required
+        />
+      </mat-form-field>
+      <p
+        *ngIf="title.errors?.['required'] && title.touched"
+        class="error-message"
+      >
+        Field "Title" is required!
+      </p>
+
+      <mat-form-field class="full-width">
+        <mat-label>Photo</mat-label>
+        <input
+          matInput
+          placeholder="Url for photo"
+          formControlName="photoUrl"
+          required
+        />
+      </mat-form-field>
+      <p
+        *ngIf="photoUrl.errors?.['required'] && photoUrl.touched"
+        class="error-message"
+      >
+        Field "Photo url" is required!
+      </p>
+      <button mat-stroked-button type="submit" [disabled]="!form.valid">
+        Save
+      </button>
+    </form>
+  </app-modal>
+</div>
